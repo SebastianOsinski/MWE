@@ -31,6 +31,7 @@ class ViewController: UIViewController, WKScriptMessageHandler, WKNavigationDele
         configuration.userContentController = contentController
         
         webView = WKWebView(frame: CGRect.zero, configuration: configuration)
+        view.addSubview(webView)
         webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
         loadLabel.text = nil
